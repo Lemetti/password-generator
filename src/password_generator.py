@@ -27,14 +27,14 @@ def generate_password(length: int = 15) -> str:
     lower = string.ascii_lowercase
     upper = string.ascii_uppercase
     digits = string.digits
-    symbols = '!@#$%^&*()-_=+[]{}|;:,.<>?/'
+    symbols = "!@#$%^&*()-_=+[]{}|;:,.<>?/"
 
     # Гарантированное наличие всех типов символов
     password = [
         random.choice(lower),
         random.choice(upper),
         random.choice(digits),
-        random.choice(symbols)
+        random.choice(symbols),
     ]
 
     # Добавление остальных символов
@@ -44,4 +44,4 @@ def generate_password(length: int = 15) -> str:
     # Перемешивание символов
     random.shuffle(password)
 
-    return ''.join(password)
+    return "".join(password)

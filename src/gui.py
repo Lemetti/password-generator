@@ -1,5 +1,6 @@
 import customtkinter as ctk
 import pyperclip
+
 from password_generator import generate_password
 
 
@@ -40,9 +41,7 @@ class PasswordGeneratorApp(ctk.CTk):
         self.frame.pack(pady=20, padx=40, fill="both", expand=True)
 
         self.label_title = ctk.CTkLabel(
-            self.frame,
-            text="Генератор случайных паролей",
-            font=("Roboto", 20)
+            self.frame, text="Генератор случайных паролей", font=("Roboto", 20)
         )
         self.label_title.pack(pady=10)
 
@@ -53,25 +52,17 @@ class PasswordGeneratorApp(ctk.CTk):
         self.entry_length.pack(pady=5)
 
         self.button_generate = ctk.CTkButton(
-            self.frame,
-            text="Сгенерировать пароль",
-            command=self.on_generate
+            self.frame, text="Сгенерировать пароль", command=self.on_generate
         )
         self.button_generate.pack(pady=10)
 
         self.label_result = ctk.CTkLabel(
-            self.frame,
-            text="",
-            font=("Roboto", 16),
-            wraplength=300
+            self.frame, text="", font=("Roboto", 16), wraplength=300
         )
         self.label_result.pack(pady=10)
 
         self.button_copy = ctk.CTkButton(
-            self.frame,
-            text="Копировать",
-            command=self.on_copy,
-            state="disabled"
+            self.frame, text="Копировать", command=self.on_copy, state="disabled"
         )
         self.button_copy.pack(pady=5)
 
