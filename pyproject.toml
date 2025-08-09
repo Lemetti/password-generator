@@ -1,0 +1,22 @@
+[project]
+name = "password-generator"
+version = "1.0.0"
+description = "Simple password generator with GUI"
+authors = [
+    {name = "Alex Lemetti", email = "alexlemetti@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "customtkinter>=5.2.2,<6.0.0",
+    "pyperclip>=1.9.0,<2.0.0"
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+ruff = "^0.12.8"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
