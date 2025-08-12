@@ -19,7 +19,11 @@ def generate_password(length: int = 15) -> str:
         ValueError: Если длина меньше 4 или больше 42.
     """
 
-    # Валидация входных данных
+    # Валидация типа
+    if not isinstance(length, int):
+        raise TypeError("Введите целое число")
+
+    # Валидация значения
     if not 4 <= length <= 42:
         raise ValueError("Введите число от 4 до 42")
 

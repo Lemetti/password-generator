@@ -12,7 +12,7 @@ class PasswordGeneratorApp(ctk.CTk):
         Создает окно приложения, настраивает тему и интерфейс.
         """
         super().__init__()
-        self.title("Генератор паролей")
+        self.title("Portable Password Generator")
         self.geometry("400x300")
 
         # Настройка темы
@@ -41,7 +41,7 @@ class PasswordGeneratorApp(ctk.CTk):
         self.frame.pack(pady=20, padx=40, fill="both", expand=True)
 
         self.label_title = ctk.CTkLabel(
-            self.frame, text="Генератор случайных паролей", font=("Roboto", 20)
+            self.frame, text="Наколдуем паролей?", font=("Roboto", 20)
         )
         self.label_title.pack(pady=10)
 
@@ -86,11 +86,17 @@ class PasswordGeneratorApp(ctk.CTk):
         """
         try:
             length = int(self.entry_length.get())
+        except ValueError:
+            self.label_result.configure(text="Введите целое число")
+            return
+
+        try:
             password = generate_password(length)
             self.label_result.configure(text=password)
             self.button_copy.configure(state="normal")
         except ValueError as e:
             self.label_result.configure(text=str(e))
+
         except Exception as e:
             self.label_result.configure(text=f"Ошибка: {str(e)}")
 
