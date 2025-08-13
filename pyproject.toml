@@ -13,9 +13,18 @@ dependencies = [
     "pyperclip>=1.9.0,<2.0.0"
 ]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.4.1"
-ruff = "^0.12.8"
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.1,<9.0.0",
+    "ruff>=0.12.8,<0.14.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+    "-ra",
+    "--strict-markers"
+]
 
 [tool.ruff]
 line-length = 88
@@ -30,5 +39,5 @@ select = [
 ]
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
