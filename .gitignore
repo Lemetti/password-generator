@@ -20,6 +20,8 @@ MANIFEST
 
 # Unit test / coverage reports
 .pytest_cache/
+.coverage
+htmlcov/
 
 # Environments
 .env

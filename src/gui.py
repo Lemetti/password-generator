@@ -4,7 +4,7 @@ import pyperclip
 from password_generator import generate_password
 
 
-class PasswordGeneratorApp(ctk.CTk):
+class PasswordGeneratorApp(ctk.CTk):  # pragma: no cover
     def __init__(self):
         """
         Инициализация приложения генератора паролей.
