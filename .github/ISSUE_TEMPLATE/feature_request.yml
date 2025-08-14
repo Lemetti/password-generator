@@ -1,0 +1,23 @@
+name: ✨ Предложить фичу
+about: Хочешь что-то добавить? Расскажи!
+title: ''
+labels: enhancement
+assignees: ''
+
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Фича
+      placeholder: Опишите, что хотите добавить
+      value: |
+        ## Что вы хотите добавить
+        <!-- Описание -->
+
+        ## Зачем это нужно
+        <!-- Обоснование -->
+
+        ## Как это может выглядеть
+        <!-- Идеи по интерфейсу -->
+    validations:
+      required: true
